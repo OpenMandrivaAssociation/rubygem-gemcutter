@@ -10,7 +10,7 @@ URL:		http://%{oname}.rubyforge.org/
 Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby-RubyGems
-Requires:	rubygem-json_pure
+Requires:	rubygem-json_pure ruby-activesupport ruby-rake
 BuildArch:	noarch
 
 %description
