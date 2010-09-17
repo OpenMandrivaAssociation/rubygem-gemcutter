@@ -2,7 +2,7 @@
 
 Summary:	Adds several commands to RubyGems for managing gems and more on Gemcutter.org
 Name:		rubygem-%{oname}
-Version:	0.3.0
+Version:	0.6.1
 Release:	%mkrel 1
 License:	MIT
 Group:		Development/Ruby
@@ -10,7 +10,6 @@ URL:		http://%{oname}.rubyforge.org/
 Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby-RubyGems
-Requires:	rubygem-json_pure ruby-activesupport ruby-rake
 BuildArch:	noarch
 
 %description
