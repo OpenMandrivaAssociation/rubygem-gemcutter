@@ -1,35 +1,51 @@
-%define	oname	gemcutter
+# Generated from gemcutter-0.7.0.gem by gem2rpm5 -*- rpm-spec -*-          
+%define	rbname	gemcutter
 
-Summary:	Adds several commands to RubyGems for managing gems and more on Gemcutter.org
-Name:		rubygem-%{oname}
+Summary:	Commands to interact with RubyGems.org
+Name:		rubygem-%{rbname}
+
 Version:	0.7.0
-Release:	%mkrel 1
-License:	MIT
+Release:	1
 Group:		Development/Ruby
-URL:		http://%{oname}.rubyforge.org/
-Source0:	http://gems.rubyforge.org/gems/%{oname}-%{version}.gem
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	ruby-RubyGems
+License:	MIT
+URL:		http://rubygems.org
+Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
+BuildRequires:	rubygems 
 BuildArch:	noarch
 
 %description
-Adds several commands to RubyGems for managing gems and more on Gemcutter.org.
+Adds several commands to RubyGems for managing gems and more on RubyGems.org.
+
+%package	doc
+Summary:	Documentation for %{name}
+Group:		Books/Computer books
+Requires:	%{name} = %{EVRD}
+
+%description	doc
+Documents, RDoc & RI documentation for %{name}.
 
 %prep
+%setup -q
 
 %build
+%gem_build -f test
 
 %install
-rm -rf %{buildroot}
-gem install --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
+%gem_install
 
 %clean
 rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
-%doc %{ruby_gemdir}/doc/%{oname}-%{version}
-%{ruby_gemdir}/cache/%{oname}-%{version}.gem
-%{ruby_gemdir}/gems/%{oname}-%{version}
-%{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems/commands
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems/commands/*.rb
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/test
+%{ruby_gemdir}/gems/%{rbname}-%{version}/test/*.rb
+%{ruby_gemdir}/specifications/%{rbname}-%{version}.gemspec
 
+%files doc
+%doc %{ruby_gemdir}/doc/%{rbname}-%{version}
