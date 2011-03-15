@@ -2,7 +2,7 @@
 
 Summary:	Adds several commands to RubyGems for managing gems and more on Gemcutter.org
 Name:		rubygem-%{oname}
-Version:	0.6.1
+Version:	0.7.0
 Release:	%mkrel 1
 License:	MIT
 Group:		Development/Ruby
