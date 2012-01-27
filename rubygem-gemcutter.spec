@@ -4,7 +4,7 @@
 Summary:	Commands to interact with RubyGems.org
 Name:		rubygem-%{rbname}
 
-Version:	0.7.0
+Version:	0.7.1
 Release:	1
 Group:		Development/Ruby
 License:	MIT
@@ -33,13 +33,12 @@ Documents, RDoc & RI documentation for %{name}.
 %install
 %gem_install
 
-%clean
-rm -rf %{buildroot}
-
 %files
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib
+%dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/%{rbname}
 %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/*.rb
+%{ruby_gemdir}/gems/%{rbname}-%{version}/lib/gemcutter/version.rb
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems
 %dir %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems/commands
 %{ruby_gemdir}/gems/%{rbname}-%{version}/lib/rubygems/commands/*.rb
