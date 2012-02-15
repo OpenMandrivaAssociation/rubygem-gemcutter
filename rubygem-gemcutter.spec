@@ -5,7 +5,7 @@ Summary:	Commands to interact with RubyGems.org
 Name:		rubygem-%{rbname}
 
 Version:	0.7.1
-Release:	1
+Release:	2
 Group:		Development/Ruby
 License:	MIT
 URL:		http://rubygems.org
