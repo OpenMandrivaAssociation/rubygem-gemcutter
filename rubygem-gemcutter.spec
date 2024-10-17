@@ -8,7 +8,7 @@ Version:	0.7.1
 Release:	3
 Group:		Development/Ruby
 License:	MIT
-URL:		http://rubygems.org
+URL:		https://rubygems.org
 Source0:	http://rubygems.org/gems/%{rbname}-%{version}.gem
 BuildRequires:	rubygems 
 BuildArch:	noarch
